@@ -11,8 +11,11 @@ class Url(models.Model):
         return self.full_url
     
     @classmethod
-    def create(self,full_url):
-        temp_url=md5(full_url.encode()).hexdigest()[:5]
+    def create(self,full_url,code):
+        if Url.objects.filter(short_url=code).exists():
+            temp_url=md5(full_url.encode()).hexdigest()[:5]
+        else:
+            temp_url=code
 
         try:
             obj=self.objects.create(full_url=full_url, short_url=temp_url)

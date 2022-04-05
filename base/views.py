@@ -7,7 +7,8 @@ from django.shortcuts import redirect
 def createurl(request):
     if request.method=="POST":
         full_url=request.POST.get('full_url')
-        obj=Url.create(full_url)
+        Code=request.POST.get('code')
+        obj=Url.create(full_url,Code)
         return render(request,'base/index.html',{
             'full_url' :obj.full_url,
             'short_url': request.get_host()+'/'+obj.short_url

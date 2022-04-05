@@ -7,8 +7,8 @@
     </head>
     <Style>
         form{
-            width: 400px;
-            height: 300px;
+            width: 9 00px;
+            height: 900px;
             background-color: lightblue;
             display: flex;
             flex-direction: column;
@@ -25,6 +25,8 @@
             {% csrf_token %}
             <p><b>Please enter URL-</b></p>
             <input type="text" name="full_url">
+            <p><b>Please enter any alphanumeric code if you want-</b></p>
+            <input type="text" name="code">
             <button type="submit">Submit</button>
             <p>
                Full URL : {{ full_url }}
