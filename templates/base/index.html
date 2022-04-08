@@ -10,9 +10,8 @@
     </head>
     <Style>
 
+
         form{
-            width: 9 00px;
-            height: 900px;
             background-color:lightblue;
             display: flex;
             flex-direction: column;
@@ -42,12 +41,22 @@
             </div>
             <input class="btn btn-primary" type="submit" value="Submit">
             <br><br>
-            <p>
-               Full URL : {{ full_url }}
-            </p><br><br>
-            <p>
-                Short URL :<b>{{ short_url }}</b>
-            </p>
         </form>
+        <div class="output" style="background-color: lightblue;">
+            <div style="margin-left: 50px;">
+        <p>
+            Full URL : {{ full_url }}
+         </p><br><br>
+         <p>
+             Short URL :<b>{{ short_url }}</b>
+         </p>
+         <br>
+         <div style="margin: auto">
+             <p style="align-items: center;"><b> QR Code:</b> </p>
+             {{ svg|safe }}
+           </div>
+        </div>
+        </div>
+
     </body>
 </html>
